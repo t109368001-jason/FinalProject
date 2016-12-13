@@ -1,28 +1,27 @@
-²Ä¤@¦¸°õ¦æ
-git branch ¦Û¤vªº¥N¸¹
-git checkout ¦Û¤vªº¥N¸¹
+ç¬¬ä¸€æ¬¡åŸ·è¡Œ
+git branch è‡ªå·±çš„ä»£è™Ÿ
+git checkout è‡ªå·±çš„ä»£è™Ÿ
 git add .
-git commit -m "¦Û¤vªº¥N¸¹"
-git push --set-upstream origin ¦Û¤vªº¥N¸¹
+git commit -m "è‡ªå·±çš„ä»£è™Ÿ"
+git push --set-upstream origin è‡ªå·±çš„ä»£è™Ÿ
 
-»İ­n§ó·s®É
-git checkout ¦Û¤vªº¥N¸¹
+éœ€è¦æ›´æ–°æ™‚
+git checkout è‡ªå·±çš„ä»£è™Ÿ
 git pull origin master --allow-unrelated-histories
 git add .
-git commit -m "¦Û¤vªº¥N¸¹"
+git commit -m "è‡ªå·±çš„ä»£è™Ÿ"
 git push
 
-¼g§¹µ{¦¡®É
+å¯«å®Œç¨‹å¼æ™‚
 git add .
-git commit -m "¦Û¤vªº¥N¸¹"
+git commit -m "è‡ªå·±çš„ä»£è™Ÿ"
 git push
 
-¤£¤p¤ß§â¾ã­Ó©Î¬Ogitªº¸ê®Æ§¨§R±¼
-git branch ¦Û¤vªº¥N¸¹
-git checkout ¦Û¤vªº¥N¸¹
-git pull origin ¦Û¤vªº¥N¸¹ --allow-unrelated-histories
-(­Y¥X²{©_©Çªºµe­±¡A«ö CTRL+Z ©Î CTRL+C)
+ä¸å°å¿ƒæŠŠæ•´å€‹æˆ–æ˜¯gitçš„è³‡æ–™å¤¾åˆªæ‰
+git branch è‡ªå·±çš„ä»£è™Ÿ
+git checkout è‡ªå·±çš„ä»£è™Ÿ
+git pull origin è‡ªå·±çš„ä»£è™Ÿ --allow-unrelated-histories
+(è‹¥å‡ºç¾å¥‡æ€ªçš„ç•«é¢ï¼ŒæŒ‰ CTRL+Z æˆ– CTRL+C)
 git add .
-git commit -m "¦Û¤vªº¥N¸¹"
-git push --set-upstream origin ¦Û¤vªº¥N¸¹
-123
+git commit -m "è‡ªå·±çš„ä»£è™Ÿ"
+git push --set-upstream origin è‡ªå·±çš„ä»£è™Ÿ
