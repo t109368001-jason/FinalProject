@@ -34,4 +34,4 @@ void kai(void)
 
 		}
 	}
-}/////*/usb
+}
