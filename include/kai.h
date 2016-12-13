@@ -35,5 +35,10 @@ void kai(void)
 		}
 	}
 }
+<<<<<<< HEAD
 ////
 /*/*/
+=======
+
+//fghdfhg
+>>>>>>> e4b4ddc9a733011def5b386467a243b24766a5ff
