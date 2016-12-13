@@ -36,4 +36,4 @@ void kai(void)
 	}
 }
 
-/*/*/
+//fghdfhg
