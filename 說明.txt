@@ -5,7 +5,7 @@ git add .
 git commit -m "自己的代號"
 git push --set-upstream origin 自己的代號
 
-寫程式前
+需要更新時
 git checkout 自己的代號
 git pull origin master --allow-unrelated-histories
 git add .
