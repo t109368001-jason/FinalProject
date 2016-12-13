@@ -6,13 +6,9 @@ first
 ¨C³æ¦ì
 */
 
-
-
 #include <stdio.h>
 #include <stdlib.h>
 int f[19][19] = { 0 };
-
-
 
 void kai(void)
 {
