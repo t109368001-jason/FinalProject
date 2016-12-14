@@ -70,6 +70,15 @@
   <ItemGroup>
     <ClCompile Include="..\..\source\main.c" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\xiao.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\出題.txt" />
+    <Text Include="..\..\控制.txt" />
+    <Text Include="..\..\紀錄.txt" />
+    <Text Include="..\..\顯示.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
