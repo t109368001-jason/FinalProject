@@ -15,9 +15,4 @@
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\include\kai.h">
-      <Filter>include</Filter>
-    </ClInclude>
-  </ItemGroup>
 </Project>
