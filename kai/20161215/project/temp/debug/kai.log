@@ -1,5 +1,5 @@
-﻿已經開始建置於 2016/12/13 下午 10:49:59。
-     1>節點 2 (Build 目標) 上的專案 "C:\c_code\git\Final-Project\kai\project\kai\kai\kai.vcxproj"。
+﻿已經開始建置於 2016/12/15 下午 02:41:46。
+     1>節點 2 (Build 目標) 上的專案 "C:\c_code\git\FinalProject\kai\20161215\project\kai\kai\kai.vcxproj"。
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(356,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
      1>ClCompile:
@@ -7,9 +7,9 @@
          Main.c
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\temp\debug\kai.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\temp\debug\kai.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\temp\debug\kai.lib" /MACHINE:X86 ..\..\temp\debug\Main.obj
-         kai.vcxproj -> C:\c_code\git\Final-Project\kai\project\kai\kai\..\..\temp\debug\kai.exe
-     1>專案 "C:\c_code\git\Final-Project\kai\project\kai\kai\kai.vcxproj" (Build 目標) 建置完成。
+         kai.vcxproj -> C:\c_code\git\FinalProject\kai\20161215\project\kai\kai\..\..\temp\debug\kai.exe
+     1>專案 "C:\c_code\git\FinalProject\kai\20161215\project\kai\kai\kai.vcxproj" (Build 目標) 建置完成。
 
 建置成功。
 
-經過時間 00:00:00.95
+經過時間 00:00:00.88
