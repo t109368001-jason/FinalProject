@@ -1,0 +1,39 @@
+int wait_keyin()
+	回傳key值
+
+int menu_screen(選項)
+	用wait_keyin取得按鍵
+	1~4	選項設為1~4，並回傳1
+	其他回傳-1
+
+int level_screen(難度)
+	用wait_keyin取得按鍵
+	1~3 難度設為1~3，並回傳1
+	其他回傳-1
+
+
+int record_screen()
+	用wait_keyin取得按鍵
+
+
+int decision_screen(決定)
+	用wait_keyin取得按鍵
+	1~2 決定=1~2，並回傳1
+	其他		回傳-1
+
+int screen(現在狀態[9(x軸)][9(y軸)],游標[2(0=x軸,1=y軸)])
+	用wait_keyin取得按鍵
+	w	游標y軸-1
+	a	以w類推
+	s	以w類推
+	d	以w類推
+	space
+		將游標對應的現在狀態格子清空為0
+	1~9
+		將游標對應的現在狀態格子設為1~9
+	上述都回傳1
+	
+	CTRL+Q
+		回傳-1
+
+	除了上述的其他回傳0
