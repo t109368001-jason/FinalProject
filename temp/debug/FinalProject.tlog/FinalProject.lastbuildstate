@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< HEAD
 Debug|Win32|C:\c_code\git\FinalProject\FinalProject\|
+=======
+Debug|Win32|C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\|
+>>>>>>> 6540031a9bc4b8a4182881cf147e74934a2b732f
