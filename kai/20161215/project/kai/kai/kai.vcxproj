@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CF1AC647-F070-4F67-9FA5-399065D9E01A}</ProjectGuid>
-    <RootNamespace>FinalProject</RootNamespace>
+    <ProjectGuid>{0C03F2B0-2A91-4548-8228-09401D466F34}</ProjectGuid>
+    <RootNamespace>kai</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -47,7 +47,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\..\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\c_code\git\Final-Project\kai\project\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -68,16 +68,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\source\main.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\include\xiao.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\..\出題.txt" />
-    <Text Include="..\..\控制.txt" />
-    <Text Include="..\..\紀錄.txt" />
-    <Text Include="..\..\顯示.txt" />
+    <ClCompile Include="..\..\source\Main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
