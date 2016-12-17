@@ -5,8 +5,16 @@ git add .
 git commit -m "è‡ªå·±çš„ä»£è™Ÿ"
 git push --set-upstream origin è‡ªå·±çš„ä»£è™Ÿ
 
+<<<<<<< HEAD
 éœ€è¦æ›´æ–°æ™‚
 git checkout è‡ªå·±çš„ä»£è™Ÿ
+=======
+»Ý­n§ó·s®É
+git add .
+git commit -m "¦Û¤vªº¥N¸¹"
+git push
+git checkout ¦Û¤vªº¥N¸¹
+>>>>>>> 1385907d1425dd98b4dc9d600b2c4d673e16ba42
 git pull origin master --allow-unrelated-histories
 git add .
 git commit -m "è‡ªå·±çš„ä»£è™Ÿ"
