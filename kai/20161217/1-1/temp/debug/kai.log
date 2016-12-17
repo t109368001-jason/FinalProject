@@ -1,0 +1,11 @@
+﻿Build started 2016/12/18 上午 12:26:04.
+     1>Project "C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\kai\FinalProject\kai\20161217\project\kai\kai\kai.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(363,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>Link:
+         kai.vcxproj -> C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\kai\FinalProject\kai\20161217\project\kai\kai\..\..\temp\debug\kai.exe
+     1>Done Building Project "C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\kai\FinalProject\kai\20161217\project\kai\kai\kai.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.05
