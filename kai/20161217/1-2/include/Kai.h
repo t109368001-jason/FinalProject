@@ -9,7 +9,6 @@
 #define _O_U16TEXT 0x20000
 #endif
 
-
 void ruler_x(void);
 void ruler_y(void);
 void ruler(void);
@@ -20,6 +19,8 @@ void printf_init(int q[9][9]);
 void test_dis(void);
 void printf_level(void);
 void printf_menu(void);
+void printf_screen(int q_n[9][9], int cur[2]);
+
 
 int F[19][19] =
 { { 11, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 14 },
@@ -56,7 +57,17 @@ int Q[9][9] =
 { 0, 0, 0, 3, 0, 1, 1, 1, 1 },
 { 0, 0, 0, 0, 0, 1, 3, 1, 1 },
 { 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
-
+int SOL[9][9] =
+{ { 7, 0, 0, 0, 0, 1, 1, 1, 1 },
+{ 0, 0, 0, 0, 0, 7, 1, 1, 1 },
+{ 0, 0, 0, 9, 0, 1, 1, 1, 1 },
+{ 0, 0, 0, 0, 0, 1, 1, 1, 1 },
+{ 0, 0, 5, 0, 0, 1, 1, 1, 1 },
+{ 0, 0, 0, 0, 0, 1, 1, 1, 1 },
+{ 0, 0, 0, 3, 0, 1, 1, 1, 1 },
+{ 0, 0, 0, 0, 0, 1, 3, 1, 1 },
+{ 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+int x_y[2] = { 8, 8 };
 void gotoxy(int xpos, int ypos)
 {
 	COORD scrn;
@@ -75,14 +86,11 @@ void ruler_x(void)
 
 void ruler_y(void)
 {
-
 	for (int i = 1; i <= 29; i++)
 	{
 		gotoxy(0, i);
 		wprintf(L"%d", i);
-
 	}
-
 }
 
 void ruler(void)
@@ -95,7 +103,7 @@ void ruler(void)
 void printf_decision(void)
 {
 	int x = 0;
-	int y = 10;
+	int y = -10;
 	gotoxy(60 + x, 15 + y);
 	wprintf(L"%s", L"               ");
 	gotoxy(60 + x, 16 + y);	       
@@ -125,7 +133,7 @@ void printf_level(void)
 void printf_menu(void)
 {
 	int x = 0;
-	int y =5;
+	int y =-5;
 	gotoxy(60 + x, 15 + y);
 	wprintf(L"%s", L"1:開始遊戲        ");
 	gotoxy(60 + x, 16 + y);
@@ -138,14 +146,10 @@ void printf_menu(void)
 }
 void form(void)
 {
-	int cnt_1 = 0;
-	int j = 0;
-	int i = 0;
-	
-	for (i = 0; i <= 18; i++)
+	for (int i = 0; i <= 18; i++)
 	{
-		gotoxy(15, 7 + i);
-		for (j = 0; j <= 18; j++)
+		gotoxy(15, 3+ i);
+		for (int j = 0; j <= 18; j++)
 		{
 			switch (F[i][j])
 			{
@@ -239,28 +243,20 @@ void form(void)
 				else
 					wprintf(L"%s", L"９");
 				break;
-
 			default:
 				break;
-
 			}
-		}
-		
+		}	
 	}
-
 }
 
 
 void printf_init(int q[9][9])
 {
-	int i = 0;
-	int j = 0;
-
-	for (i = 0; i <= 8; i++)
+	for (int i = 0; i <= 8; i++)
 	{
-		for (j = 0; j <= 8; j++)
+		for (int j = 0; j <= 8; j++)
 		{
-
 			F[i * 2 + 1][j * 2 + 1] = q[i][j];
 			if (q[i][j] != 0)
 			{
@@ -270,4 +266,10 @@ void printf_init(int q[9][9])
 	}
 	form();
 }
-
+void printf_screen(int q_n[9][9], int cur[2])
+{
+	if (q_f[cur[1]][cur[0]] == 0)
+		F[cur[1] * 2 + 1][cur[0] * 2 + 1] = q_n[cur[1]][cur[0]];
+	form();
+	gotoxy(17 + cur[1]*4, 4 + cur[0]*2);
+}
