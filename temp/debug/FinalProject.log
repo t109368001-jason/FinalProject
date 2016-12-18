@@ -1,44 +1,50 @@
-﻿Build started 2016/12/15 下午 02:21:52.
+﻿Build started 2016/12/18 上午 02:11:56.
      1>Project "C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\FinalProject\FinalProject.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(363,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\..\temp\debug\\" /Fd"..\..\temp\debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\source\main.c
          main.c
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(22): warning C4013: 'printf_menu' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(23): warning C4013: 'menu_screen' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(27): warning C4013: 'printf_level' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(28): warning C4013: 'level_scree' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(29): warning C4244: 'function' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(31): warning C4013: 'set_question' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(32): warning C4013: 'get_answer' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(35): warning C4013: 'printf_screen' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(36): warning C4013: 'screen' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(41): warning C4013: 'save_record' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(43): warning C4013: 'init_record_file' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(47): warning C4013: 'autosave' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(49): warning C4013: 'printf_decision' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(50): warning C4013: 'decision_screen' undefined; assuming extern returning int
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(60): warning C4013: 'recovery' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\asd346119.h(88): warning C4102: 'case50' : unreferenced label
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\asd346119.h(84): warning C4102: 'case49' : unreferenced label
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(25): warning C4013: 'printf_menu' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(26): warning C4047: 'function' : 'int *' differs in levels of indirection from 'int'
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(26): warning C4024: 'menu_screen' : different types for formal and actual parameter 1
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(30): warning C4013: 'printf_level' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(31): warning C4047: 'function' : 'int *' differs in levels of indirection from 'int'
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(31): warning C4024: 'level_screen' : different types for formal and actual parameter 1
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(32): warning C4244: 'function' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(34): warning C4013: 'set_question' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(35): warning C4013: 'get_answer' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(38): warning C4013: 'printf_screen' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(44): warning C4013: 'save_record' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(46): warning C4013: 'init_record_file' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(50): warning C4013: 'autosave' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(52): warning C4013: 'printf_decision' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(53): warning C4047: 'function' : 'int *' differs in levels of indirection from 'int'
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(53): warning C4024: 'decision_screen' : different types for formal and actual parameter 1
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(61): warning C4013: 'recovery' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(65): warning C4013: 'read_record' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(66): warning C4013: 'printf_record' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(71): warning C4047: 'function' : 'int *' differs in levels of indirection from 'int'
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(71): warning C4024: 'decision_screen' : different types for formal and actual parameter 1
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\temp\debug\FinalProject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\temp\debug\FinalProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\temp\debug\FinalProject.lib" /MACHINE:X86 ..\..\temp\debug\main.obj
      1>main.obj : error LNK2019: unresolved external symbol _printf_menu referenced in function _main
-     1>main.obj : error LNK2019: unresolved external symbol _menu_screen referenced in function _main
      1>main.obj : error LNK2019: unresolved external symbol _printf_level referenced in function _main
-     1>main.obj : error LNK2019: unresolved external symbol _level_scree referenced in function _main
      1>main.obj : error LNK2019: unresolved external symbol _set_question referenced in function _main
      1>main.obj : error LNK2019: unresolved external symbol _get_answer referenced in function _main
      1>main.obj : error LNK2019: unresolved external symbol _printf_screen referenced in function _main
-     1>main.obj : error LNK2019: unresolved external symbol _screen referenced in function _main
      1>main.obj : error LNK2019: unresolved external symbol _save_record referenced in function _main
      1>main.obj : error LNK2019: unresolved external symbol _init_record_file referenced in function _main
      1>main.obj : error LNK2019: unresolved external symbol _autosave referenced in function _main
      1>main.obj : error LNK2019: unresolved external symbol _printf_decision referenced in function _main
-     1>main.obj : error LNK2019: unresolved external symbol _decision_screen referenced in function _main
      1>main.obj : error LNK2019: unresolved external symbol _recovery referenced in function _main
-     1>..\..\temp\debug\FinalProject.exe : fatal error LNK1120: 14 unresolved externals
+     1>main.obj : error LNK2019: unresolved external symbol _read_record referenced in function _main
+     1>main.obj : error LNK2019: unresolved external symbol _printf_record referenced in function _main
+     1>..\..\temp\debug\FinalProject.exe : fatal error LNK1120: 12 unresolved externals
      1>Done Building Project "C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\FinalProject\FinalProject.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:00.40
+Time Elapsed 00:00:00.33

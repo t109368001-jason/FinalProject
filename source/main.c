@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "xiao.h"
+#include "asd346119.h"
 
 int main(void)
 {
@@ -27,7 +28,7 @@ int main(void)
 		{
 		case 1:											//開始遊戲
 			printf_level();									//printf難易度說明
-			while (level_scree(level) != 1);				//難度選擇
+			while (level_screen(level) != 1);				//難度選擇
 			srand(time(NULL));								//設rand種子碼
 			question_number = (rand() % 30) + 1;			//隨機出題號
 			set_question(question, level, question_number);	//設定題目
