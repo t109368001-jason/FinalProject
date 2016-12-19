@@ -81,11 +81,11 @@ int decision_screen(int *e)
 	int r = wait_keyin();
 	switch (r)
 	{
-	case49:
+	case 49:
 		*e = 1;
 		return 1;
 		break;
-	case50:
+	case 50:
 		*e = 2;
 		return 1;
 		break;

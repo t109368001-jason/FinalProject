@@ -31,12 +31,14 @@ int main(void)
 	int level = 0;
 	int decision_s = 0;
 	int decision_e = 0;
+	int screen_check_key = 0;
 	int question_number = 0;
 	long start_time = 0;
 	long end_time = 0;
 
 	while (menu != 4)
 	{
+	top_menu:
 		printf_menu();								//printf主選單
 		while (menu_screen(&menu) != 1);				//主選單選擇
 		switch (menu)
@@ -53,8 +55,12 @@ int main(void)
 		continue_play:
 			printf_init(question);
 			printf_screen(do_question, cursor);	//printf開始遊戲畫面
-			while (screen(do_question, cursor) != -1)		//遊戲中
+			while ((screen_check_key = screen(do_question, cursor)) != -1)		//遊戲中
 			{
+				if (screen_check_key == 2)
+				{
+					cheat(do_question, answer,cursor);
+				}
 				printf_screen(do_question, cursor);	//printf開始遊戲畫面
 				if (check_complete(question, do_question, answer) == 1)	//是否已完成
 				{
@@ -62,6 +68,9 @@ int main(void)
 					{
 						//init_record_file();								//建立存檔
 					}
+					//printf_win();
+					while (decision_win() != 1);
+					goto top_menu;
 
 				}
 				//while (autosave(question, do_question, answer, level, clock() - start_time) != 1);	//寫入到記錄檔
@@ -94,6 +103,7 @@ int main(void)
 			break;
 		}
 	}
+	//printf_end();
 	system("pause");
 	return 0;
 }

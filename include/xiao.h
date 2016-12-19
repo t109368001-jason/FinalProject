@@ -4,9 +4,10 @@ int check_complete(int question[][9], int do_question[][9],int answer[9][9])
 	{
 		for (int j = 0; j <= 8; j++)
 		{
-			if ((question[i][j] != answer[i][j]) || (do_question[i][j] != answer[i][j]))
+			if (question[i][j] == 0)
 			{
-				return -1;
+				if (do_question[i][j] != answer[i][j])
+					return -1;
 			}
 		}
 	}
@@ -29,4 +30,9 @@ BOOL SetConsoleSize(int W, int H)
 	Sz.Y = H;
 
 	return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), Sz);
+}
+
+void cheat(int do_question[][9], int answer[][9], int cursor[])
+{
+	do_question[cursor[1]][cursor[0]] = answer[cursor[1]][cursor[0]];
 }
