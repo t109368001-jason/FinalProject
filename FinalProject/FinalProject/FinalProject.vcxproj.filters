@@ -22,6 +22,15 @@
     <ClInclude Include="..\..\include\xiao.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\include\asd346119.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\yunlin.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\Kai.h">
+      <Filter>include</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\出題.txt">
