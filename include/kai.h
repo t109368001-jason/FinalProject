@@ -46,6 +46,7 @@ int F[19][19] =
 
 int q_f[9][9] = { 0 };
 
+CONSOLE_CURSOR_INFO CCI;
 
 int Q[9][9] =
 { { 0, 0, 0, 0, 0, 1, 1, 1, 1 },
@@ -270,6 +271,21 @@ void printf_screen(int q_n[9][9], int cur[2])
 {
 	if (q_f[cur[1]][cur[0]] == 0)
 		F[cur[1] * 2 + 1][cur[0] * 2 + 1] = q_n[cur[1]][cur[0]];
+	
+	CCI.bVisible = FALSE; // 是否可視
+	CCI.dwSize = 15; // 設定大小,1~100
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &CCI);
 	form();
+	CCI.bVisible = TRUE; // 是否可視
+	CCI.dwSize = 15; // 設定大小,1~100
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &CCI);
 	gotoxy(17 + cur[0]*4, 4 + cur[1]*2);//goto(x y) array (y x)
 }
+
+
+/*
+CONSOLE_CURSOR_INFO cci;
+cci.bVisible = FALSE; // 是否可視
+cci.dwSize = 100; // 設定大小,1~100
+SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
+*/

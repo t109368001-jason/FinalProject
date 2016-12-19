@@ -13,20 +13,20 @@ int check_complete(int question[][9], int do_question[][9],int answer[9][9])
 	return 1;
 }
 
-BOOL SetConsoleSize(int W, int H)
-{
-	BOOL ret;
-	SMALL_RECT SR;
-	SR.Top = 0;
-	SR.Left = 0;
-	SR.Bottom = H - 1;
-	SR.Right = W - 1;
-	ret = SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &SR);
-	if (!ret) return ret;
-
-	COORD Sz;
-	Sz.X = W;
-	Sz.Y = H;
-
-	return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), Sz);
-}
+//BOOL SetConsoleSize(int W, int H)
+//{
+//	BOOL ret;
+//	SMALL_RECT SR;
+//	SR.Top = 0;
+//	SR.Left = 0;
+//	SR.Bottom = H - 1;
+//	SR.Right = W - 1;
+//	ret = SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &SR);
+//	if (!ret) return ret;
+//
+//	COORD Sz;
+//	Sz.X = W;
+//	Sz.Y = H;
+//
+//	return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), Sz);
+//}

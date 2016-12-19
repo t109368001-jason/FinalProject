@@ -2,14 +2,7 @@
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
-<<<<<<< HEAD
-<<<<<<< HEAD
-#include "kai.h"
-void kai(void);
-=======
-=======
 #include <time.h>
-
 #include <windows.h>
 #include <wchar.h>
 #include <locale.h>
@@ -20,31 +13,18 @@ void kai(void);
 #endif
 
 #include "xiao.h"
-<<<<<<< HEAD
->>>>>>> 6540031a9bc4b8a4182881cf147e74934a2b732f
-=======
 #include "asd346119.h"
 #include "yunlin.h"
 #include "kai.h"
->>>>>>> 2179b911e0683b3ec67cd0f5bfe4bf0b2b402a44
 
->>>>>>> 17259857e82ac1908627034d528bd1147fafba92
 int main(void)
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-	kai();
-=======
-	int question[9][9];
-	int do_question[9][9];
-	int answer[9][9];
-=======
 	_setmode(_fileno(stdout), _O_U16TEXT);
-	SetConsoleSize(120, 32);
+	//SetConsoleSize(120, 32);
 	int question[9][9] = { 0 };
 	int do_question[9][9] = { 0 };
 	int answer[9][9] = { 0 };
->>>>>>> 2179b911e0683b3ec67cd0f5bfe4bf0b2b402a44
+
 	int cursor[2] = { 0, 0 };
 	int record[3][3] = { 0 };
 	int menu = 0;
@@ -114,7 +94,7 @@ int main(void)
 			break;
 		}
 	}
->>>>>>> 6540031a9bc4b8a4182881cf147e74934a2b732f
+
 	system("pause");
 	return 0;
 }

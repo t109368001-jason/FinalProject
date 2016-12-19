@@ -1,0 +1,13 @@
+完成:
+
+
+關游標
+form();
+開游標
+
+/*
+CONSOLE_CURSOR_INFO cci;
+cci.bVisible = FALSE; // 是否可視
+cci.dwSize = 100; // 設定大小,1~100
+SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cci);
+*/
