@@ -121,13 +121,16 @@ void printf_level(void)
 	int x = 0;
 	int y = 0;
 	gotoxy(60 + x, 15 + y);
-	wprintf(L"%s", L"               ");
-	gotoxy(60 + x, 16 + y);
-	wprintf(L"%s", L"1:容易          ");
-	gotoxy(60 + x, 17 + y);
-	wprintf(L"%s", L"2:普通          ");
-	gotoxy(60 + x, 18 + y);
-	wprintf(L"%s", L"3:困難          ");
+	wprintf(L"%s", L"                            ");
+	gotoxy(60 + x, 16 + y);			             
+	wprintf(L"%s", L"1:容易                      ");
+	gotoxy(60 + x, 17 + y);			             
+	wprintf(L"%s", L"2:普通                      ");
+	gotoxy(60 + x, 18 + y);			             
+	wprintf(L"%s", L"3:困難                      ");
+
+
+
 	gotoxy(60 + x, 19 + y);
 }
 
@@ -136,13 +139,13 @@ void printf_menu(void)
 	int x = 0;
 	int y =-5;
 	gotoxy(60 + x, 15 + y);
-	wprintf(L"%s", L"1:開始遊戲        ");
+	wprintf(L"%s", L"1:開始遊戲                  ");
 	gotoxy(60 + x, 16 + y);
-	wprintf(L"%s", L"2:未完成的題目    ");
+	wprintf(L"%s", L"2:未完成的題目              ");
 	gotoxy(60 + x, 17 + y);
-	wprintf(L"%s", L"3:查看成績        ");
+	wprintf(L"%s", L"3:查看成績                  ");
 	gotoxy(60 + x, 18 + y);
-	wprintf(L"%s", L"4:4離開           ");
+	wprintf(L"%s", L"4:離開                      ");
 	gotoxy(60 + x, 19 + y);
 }
 void form(void)
@@ -269,15 +272,29 @@ void printf_init(int q[9][9])
 }
 void printf_screen(int q_n[9][9], int cur[2])
 {
-	if (q_f[cur[1]][cur[0]] == 0)
-		F[cur[1] * 2 + 1][cur[0] * 2 + 1] = q_n[cur[1]][cur[0]];
-
+	int x = 0;
+	int y = -5;
 	CCI.bVisible = FALSE; // 是否可視
 	CCI.dwSize = 15; // 設定大小,1~100
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &CCI);
+	gotoxy(60 + x, 15 + y);
+	wprintf(L"%s", L"↑,↓,←,→:移動游標        ");
+	gotoxy(60 + x, 16 + y);
+	wprintf(L"%s", L"space:清除格子              ");
+	gotoxy(60 + x, 17 + y);
+	wprintf(L"%s", L"1~9:輸入數字                ");
+	gotoxy(60 + x, 18 + y);
+	wprintf(L"%s", L"CTRL+Q:回到主畫面           ");
+	gotoxy(60 + x, 19 + y);
+	if (q_f[cur[1]][cur[0]] == 0)
+		F[cur[1] * 2 + 1][cur[0] * 2 + 1] = q_n[cur[1]][cur[0]];
+
+	
 	form();
 	CCI.bVisible = TRUE; // 是否可視
 	CCI.dwSize = 15; // 設定大小,1~100
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &CCI);
 	gotoxy(17 + cur[0] * 4, 4 + cur[1] * 2);//goto(x y) array (y x)
+
+	
 }
