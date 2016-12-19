@@ -45,3 +45,9 @@ int decision_win()
 
 在screen內新增
 	]	回傳2
+
+除decision_screen的BUG
+
+把decision_record裡面的
+	1 回傳1	改成
+	space 回傳1

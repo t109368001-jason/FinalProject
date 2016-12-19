@@ -36,6 +36,7 @@ int main(void)
 	long start_time = 0;
 	long end_time = 0;
 
+	//printf_welcome();
 	while (menu != 4)
 	{
 	top_menu:
@@ -48,9 +49,9 @@ int main(void)
 			while (level_screen(&level) != 1);				//難度選擇
 			srand(time(NULL));								//設rand種子碼
 			//question_number = (rand() % 30) + 1;			//隨機出題號
-			question_number =  1;			//隨機出題號
+			question_number = 1;			//隨機出題號
 			set_question(question, &level, &question_number);	//設定題目
-			get_answer(answer,&level,&question_number);
+			get_answer(answer, &level, &question_number);
 			start_time = clock();							//紀錄開始時間
 		continue_play:
 			printf_init(question);
@@ -59,21 +60,24 @@ int main(void)
 			{
 				if (screen_check_key == 2)
 				{
-					cheat(do_question, answer,cursor);
+					cheat(do_question, answer, cursor);
 				}
-				printf_screen(do_question, cursor);	//printf開始遊戲畫面
-				if (check_complete(question, do_question, answer) == 1)	//是否已完成
+				else if (screen_check_key == 1)
 				{
-					//while (save_record(level, clock() - start_time) != 1)	//存檔
+					printf_screen(do_question, cursor);	//printf開始遊戲畫面
+					if (check_complete(question, do_question, answer) == 1)	//是否已完成
 					{
-						//init_record_file();								//建立存檔
-					}
-					//printf_win();
-					while (decision_win() != 1);
-					goto top_menu;
+						//while (save_record(level, clock() - start_time) != 1)	//存檔
+						{
+							//init_record_file();								//建立存檔
+						}
+						//printf_win();
+						//while (decision_win() != 1);
+						goto top_menu;
 
+					}
+					//while (autosave(question, do_question, answer, level, clock() - start_time) != 1);	//寫入到記錄檔
 				}
-				//while (autosave(question, do_question, answer, level, clock() - start_time) != 1);	//寫入到記錄檔
 			}
 			printf_decision();								//printf決定
 			while (decision_screen(&decision_s) != 1);		//是否離開
@@ -90,7 +94,7 @@ int main(void)
 		case 3:
 			//read_record(record);							//讀取紀錄
 			//printf_record(record);							//printf紀錄
-			while (decision_record() != 1);					//是否按下離開
+			//while (decision_record() != 1);					//是否按下離開
 			break;
 		case 4:
 			printf_decision();								//printf決定
@@ -104,6 +108,5 @@ int main(void)
 		}
 	}
 	//printf_end();
-	system("pause");
 	return 0;
 }
