@@ -271,5 +271,5 @@ void printf_screen(int q_n[9][9], int cur[2])
 	if (q_f[cur[1]][cur[0]] == 0)
 		F[cur[1] * 2 + 1][cur[0] * 2 + 1] = q_n[cur[1]][cur[0]];
 	form();
-	gotoxy(17 + cur[1]*4, 4 + cur[0]*2);
+	gotoxy(17 + cur[0]*4, 4 + cur[1]*2);//goto(x y) array (y x)
 }

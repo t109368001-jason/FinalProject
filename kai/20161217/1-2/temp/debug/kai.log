@@ -1,4 +1,4 @@
-﻿已經開始建置於 2016/12/18 上午 02:15:43。
+﻿已經開始建置於 2016/12/19 下午 10:19:45。
      1>節點 2 (Build 目標) 上的專案 "C:\c_code\git\FinalProject\kai\20161217\1-2\kai\kai\kai.vcxproj"。
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(356,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
@@ -12,4 +12,4 @@
 
 建置成功。
 
-經過時間 00:00:00.70
+經過時間 00:00:01.44
