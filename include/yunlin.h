@@ -1,17 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-/*char *yunlin_road[5][20] = {
-	{ "../../../data/01question/0101.txt", "../../../data/01question/0102.txt" },
-	{},
-	{},
-	{},
-	{}
-}這裡不要理他 我只是想要放著 怕我忘記*/
-
-void  set_question(int a[][9], int *level, int *number);
-void  get_answer(int a[][9], int *level, int *number);
-
 void  set_question(int a[][9], int *level, int *number)
 {
 	FILE *fptr;

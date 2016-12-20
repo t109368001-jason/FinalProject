@@ -1,8 +1,4 @@
-﻿int check_complete(int question[][9], int do_question[][9], int answer[9][9]);
-BOOL SetConsoleSize(int W, int H);
-void init_all(int question[][9],int do_question[][9],int answer[][9],int cursor[],long record[][3],int *menu,int *level,int *decision_s,int *decision_e,int *screen_check_key,int *question_number,long *start_time,long *end_time);
-
-int check_complete(int question[][9], int do_question[][9],int answer[9][9])
+﻿int check_complete(int question[][9], int do_question[][9],int answer[9][9])
 {
 	for (int i = 0; i <= 8; i++)
 	{
@@ -41,7 +37,7 @@ void cheat(int do_question[][9], int answer[][9], int cursor[])
 	do_question[cursor[1]][cursor[0]] = answer[cursor[1]][cursor[0]];
 }
 
-void init_all(int question[][9], int do_question[][9], int answer[][9], int cursor[], long record[][3], int *menu, int *level, int *decision_s, int *decision_e, int *screen_check_key, int *question_number, long *start_time, long *end_time)
+void init_all(int question[][9], int do_question[][9], int answer[][9], int cursor[], int record_times[], long record_total[], long record_average[], long record_fast[], int *menu, int *level, int *decision_s, int *decision_e, int *screen_check_key, int *question_number, long *start_time, long *end_time)
 {
 	for (int i = 0; i < 9; i++)
 	{
@@ -54,12 +50,12 @@ void init_all(int question[][9], int do_question[][9], int answer[][9], int curs
 	}
 	cursor[0] = 0;
 	cursor[1] = 0;
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		for (int j = 0; j < 3; j++)
-		{
-			record[i][j] = 0;
-		}
+		record_times[i] = 0;
+		record_total[i] = 0;
+		record_average[i] = 0;
+		record_fast[i] = 0;
 	}
 	*menu = 0;
 	*level = 0;
@@ -71,30 +67,10 @@ void init_all(int question[][9], int do_question[][9], int answer[][9], int curs
 	*end_time = 0;
 }
 //==================snake============================
-#define SNAKES 800
-#define screen_snake_W 40
-#define screen_snake_H 20
-#define FIX_W 2
-#define FIX_H 2
-
-
-enum DIRECT { EAST, WAST, NORTH, SOUTH };
-int screen_snake[screen_snake_H + (FIX_H * 2)][screen_snake_W + (FIX_W * 2)];
-
-void screen_snake_init();
-int check_eat_self(int snake[][2], int *snake_len);
-void printf_screen_snake(int snake[][2], int dessert[], int *snake_len);
-void new_dessert(int snake[][2], int dessert[]);
-int check_eat(int snake[], int dessert[], int *snake_len);
-void init(int snake[][2], int dessert[], enum DIRECT *direct, int *snake_len);
-int snake_move(int snake[][2], enum DIRECT *direct, int *snake_len);
-void gotoxy_snake(int xpos, int ypos);
-BOOL SetConsoleSize_snake(int W, int H);
-
 int game_snake(void)
 {
 	_setmode(_fileno(stdout), _O_U16TEXT);
-	SetConsoleSize_snake((screen_snake_W + (FIX_W * 2)) * 2, screen_snake_H + (FIX_H * 2) + 2);
+	SetConsoleSize((screen_snake_W + (FIX_W * 2)) * 2, screen_snake_H + (FIX_H * 2) + 2);
 	CONSOLE_CURSOR_INFO cci;
 	cci.bVisible = FALSE; // 是否可視
 	cci.dwSize = 24; // 設定大小,1~100
@@ -129,7 +105,7 @@ int game_snake(void)
 					direct = EAST;
 				break;
 			case 17:
-				gotoxy_snake(18 * 2, 12);
+				gotoxy(18 * 2, 12);
 				wprintf(L"%ls", L"是否離開(y/n)?");
 				int decision = 0;
 				while (decision != 110 && decision != 78)
@@ -139,7 +115,7 @@ int game_snake(void)
 					{
 					case 89:
 					case 121:
-						gotoxy_snake(18 * 2, 12);
+						gotoxy(18 * 2, 12);
 						wprintf(L"%ls", L"ＧＡＭＥ　ＯＶＥＲ");
 						int c = _getch();
 						return 0;
@@ -152,7 +128,7 @@ int game_snake(void)
 
 		if ((snake_move(snake, &direct, &snake_len) == 1) || (check_eat_self(snake, &snake_len) == 1))
 		{
-			gotoxy_snake(18 * 2, 12);
+			gotoxy(18 * 2, 12);
 			wprintf(L"%ls", L"ＧＡＭＥ　ＯＶＥＲ");
 			int c = _getch();
 			return 0;
@@ -229,7 +205,7 @@ void printf_screen_snake(int snake[][2], int dessert[], int *snake_len)
 		{
 			if (screen_snake[i][j] != new_screen_snake[i][j])
 			{
-				gotoxy_snake(j * 2, i);
+				gotoxy(j * 2, i);
 				HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 				switch (new_screen_snake[i][j])
 				{
@@ -342,30 +318,4 @@ int snake_move(int snake[][2], enum DIRECT *direct, int *snake_len)
 			return 1;
 	}
 	return 0;
-}
-
-void gotoxy_snake(int xpos, int ypos)
-{
-	COORD scrn;
-	HANDLE hOuput = GetStdHandle(STD_OUTPUT_HANDLE);
-	scrn.X = xpos; scrn.Y = ypos;
-	SetConsoleCursorPosition(hOuput, scrn);
-}
-
-BOOL SetConsoleSize_snake(int W, int H)
-{
-	BOOL ret;
-	SMALL_RECT SR;
-	SR.Top = 0;
-	SR.Left = 0;
-	SR.Bottom = H - 1;
-	SR.Right = W - 1;
-	ret = SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &SR);
-	if (!ret) return ret;
-
-	COORD Sz;
-	Sz.X = W;
-	Sz.Y = H;
-
-	return SetConsoleScreenBufferSize(GetStdHandle(STD_OUTPUT_HANDLE), Sz);
 }

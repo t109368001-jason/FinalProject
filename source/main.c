@@ -3,7 +3,6 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
-
 #include <windows.h>
 #include <wchar.h>
 #include <locale.h>
@@ -12,12 +11,57 @@
 #ifndef _O_U16TEXT
 #define _O_U16TEXT 0x20000
 #endif
-
+//========XIAO========
+//========XIAO========
+int check_complete(int question[][9], int do_question[][9], int answer[9][9]);
+BOOL SetConsoleSize(int W, int H);
+void init_all(int question[][9], int do_question[][9], int answer[][9], int cursor[], int record_times[], long record_total[], long record_average[], long record_fast[], int *menu, int *level, int *decision_s, int *decision_e, int *screen_check_key, int *question_number, long *start_time, long *end_time);
+//--------------------
+#define SNAKES 800
+#define screen_snake_W 40
+#define screen_snake_H 20
+#define FIX_W 2
+#define FIX_H 2
+enum DIRECT { EAST, WAST, NORTH, SOUTH };
+int screen_snake[screen_snake_H + (FIX_H * 2)][screen_snake_W + (FIX_W * 2)];
+void screen_snake_init();
+int check_eat_self(int snake[][2], int *snake_len);
+void printf_screen_snake(int snake[][2], int dessert[], int *snake_len);
+void new_dessert(int snake[][2], int dessert[]);
+int check_eat(int snake[], int dessert[], int *snake_len);
+void init(int snake[][2], int dessert[], enum DIRECT *direct, int *snake_len);
+int snake_move(int snake[][2], enum DIRECT *direct, int *snake_len);
+//========kai========
+void ruler_x(void);
+void ruler_y(void);
+void ruler(void);
+void printf_decision(void);
+void gotoxy(int xpos, int ypos);
+void form(void);
+void printf_init(int q[9][9]);
+void test_dis(void);
+void printf_level(void);
+void printf_menu(void);
+void printf_screen(int q_n[9][9], int cur[2]);
+void printf_welcome(void);
+void printf_end(void);
+void printf_win(void);
+void printf_record(int times[5], long ave_time[5], long fas_time[5]);
+//========asd346119========
+int wait_keyin();
+int menu_screen(int *z);
+int level_screen(int *x);
+int decision_record();
+int decision_screen(int *e);
+int screen(int a[][9], int b[]);
+//========yunlin========
+void  set_question(int a[][9], int *level, int *number);
+void  get_answer(int a[][9], int *level, int *number);
+//======================
 #include "xiao.h"
+#include "kai.h"
 #include "asd346119.h"
 #include "yunlin.h"
-#include "kai.h"
-
 int main(void)
 {
 	_setmode(_fileno(stdout), _O_U16TEXT);
@@ -26,7 +70,10 @@ int main(void)
 	int do_question[9][9] = { 0 };
 	int answer[9][9] = { 0 };
 	int cursor[2] = { 0, 0 };
-	long record[3][3] = { 0 };
+	int record_times[5] = { 0 };
+	long record_total[5] = { 0 };
+	long record_average[5] = { 0 };
+	long record_fast[5] = { 0 };
 	int menu = 0;
 	int level = 0;
 	int decision_s = 0;
@@ -36,11 +83,11 @@ int main(void)
 	long start_time = 0;
 	long end_time = 0;
 
-	//printf_welcome();
+	printf_welcome();
 	while (menu != 4)
 	{
 	top_menu:
-		init_all(question,do_question,answer,cursor,record,&menu,&level,&decision_s,&decision_e,&screen_check_key,&question_number,&start_time,&end_time);
+		init_all(question, do_question, answer, cursor, record_times, record_total, record_average, record_fast, &menu, &level, &decision_s, &decision_e, &screen_check_key, &question_number, &start_time, &end_time);
 		printf_menu();								//printf主選單
 		while (menu_screen(&menu) != 1);				//主選單選擇
 		switch (menu)
@@ -94,7 +141,7 @@ int main(void)
 			break;
 		case 3:
 			//read_record(record);							//讀取紀錄
-			//printf_record(record);							//printf紀錄
+			printf_record(record_times,record_average,record_fast);							//printf紀錄
 			//while (decision_record() != 1);					//是否按下離開
 			break;
 		case 4:
@@ -119,6 +166,6 @@ int main(void)
 			break;
 		}
 	}
-	//printf_end();
+	printf_end();
 	return 0;
 }
