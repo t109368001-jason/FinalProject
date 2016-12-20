@@ -1,4 +1,6 @@
 第一次執行
+git clone https://github.com/Xiao-Xian-Jie/FinalProject.git
+cd FinalProject
 git branch 自己的代號
 git checkout 自己的代號
 git add .

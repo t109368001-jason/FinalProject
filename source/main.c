@@ -26,7 +26,7 @@ int main(void)
 	int do_question[9][9] = { 0 };
 	int answer[9][9] = { 0 };
 	int cursor[2] = { 0, 0 };
-	int record[3][3] = { 0 };
+	long record[3][3] = { 0 };
 	int menu = 0;
 	int level = 0;
 	int decision_s = 0;
@@ -40,6 +40,7 @@ int main(void)
 	while (menu != 4)
 	{
 	top_menu:
+		init_all(question,do_question,answer,cursor,record,&menu,&level,&decision_s,&decision_e,&screen_check_key,&question_number,&start_time,&end_time);
 		printf_menu();								//printf主選單
 		while (menu_screen(&menu) != 1);				//主選單選擇
 		switch (menu)
@@ -104,6 +105,17 @@ int main(void)
 				menu = 0;
 				decision_e = 1;
 			}
+			break;
+		case 5:
+			game_snake();
+			break;
+		case 6:
+			break;
+		case 7:
+			break;
+		case 8:
+			break;
+		case 9:
 			break;
 		}
 	}
