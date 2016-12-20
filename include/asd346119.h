@@ -1,15 +1,3 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include <conio.h>
-
-int wait_keyin();
-int menu_screen(int *z);
-int level_screen(int *x);
-int decision_record();
-int decision_screen(int *e);
-int screen(int a[][9], int b[]);
-
-
 int wait_keyin()
 {
 	char a;
@@ -173,7 +161,6 @@ int screen(int a[][9], int b[])
 	case 17:
 		return -1;
 		break;
-
 	}
 	return 0;
 }
