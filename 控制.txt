@@ -55,3 +55,16 @@ int decision_win()
 把decision_record裡面的
 	1 回傳1	改成
 	space 回傳1
+//========20161222========
+修改decision_screen(決定)
+	用wait_keyin取得按鍵
+	y,n 決定=1,2，並回傳1
+	其他		回傳-1
+
+修改decision_record()
+	用wait_keyin取得按鍵
+	任意鍵	回傳1
+
+新增int decision_win()
+	用wait_keyin取得按鍵
+	任意鍵	回傳1
