@@ -58,3 +58,49 @@ printf_record(次數[0~n(難度1~n)],平均時間[0~4(難度1~5)],最快時間[0~4(難度1~5)])
 
 printf_welcome()
 	歡迎畫面
+
+//========20161222========
+修改printf_screen(現在狀態[9][9],游標[2(0=x,1=y])↓
+printf_screen(現在狀態[9][9],游標[2(0=x,1=y],經過時間(long,ms))
+	照excel格式顯示
+
+新增
+set_text_color(顏色值)
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, 顏色值);
+	//使用到的顏色
+		0x0f	預設顏色(黑底白字)
+		0x0c	黑底紅字
+		0x0e	黑底黃字
+
+修改
+printf_welcome(陣列[30][59][2(0=88,1=顏色],延遲時間(int))
+	照excel格式顯示	
+	printf陣列時  間隔時間為傳入的延遲時間
+	█→▇→▆→▅→▄→▃→▂→▁→全形空白
+
+修改
+printf_end(陣列[30][59][2(0=90],延遲時間(int))
+	照excel格式顯示	
+	printf陣列時  間隔時間為傳入的延遲時間
+	全形空白→▏→▎→▍→▌→▋→▊→▉→█
+
+修改printf_win()↓
+printf_win(總時間)
+	照excel格式顯示	
+
+修改
+printf_level()
+	照excel格式顯示	
+
+修改
+printf_menu()
+	照excel格式顯示	
+
+修改
+printf_record(次數[0~n(難度1~n)],平均時間[0~4(難度1~5)],最快時間[0~4(難度1~5)])
+	照excel格式顯示	
+
+修改
+printf_decision()
+	照excel格式顯示	
