@@ -66,7 +66,7 @@ void init_all(int question[][9], int do_question[][9], int answer[][9], int curs
 		record_times[i] = 0;
 		record_total[i] = 0;
 		record_average[i] = 0;
-		record_fast[i] = 0;
+		record_fast[i] = 0x40000000;
 	}
 	*menu = 0;
 	*level = 0;
@@ -329,4 +329,103 @@ int snake_move(int snake[][2], enum DIRECT *direct, int *snake_len)
 			return 1;
 	}
 	return 0;
+}
+//===============================================================================
+int autosave(int do_question[][9],int level,int question_number,long elapse)
+{
+	FILE *autosave;
+	if ((autosave = fopen("../../data/autosave.txt", "w")) != NULL)
+	{
+		fprintf(autosave, "%d %d %ld\n", level, question_number, elapse);
+		for (int i = 0; i < 9; i++)
+		{
+			for (int j = 0; j < 9; j++)
+			{
+				fprintf(autosave, "%2d", do_question[i][j]);
+			}
+			fprintf(autosave, "\n");
+		}
+		fclose(autosave);
+		return 1;
+	}
+}
+
+int recovery(int do_question[][9], int *level, int *question_number, long *elapse)
+{
+	FILE *autosave;
+	if ((autosave = fopen("../../data/autosave.txt", "r")) != NULL)
+	{
+		fscanf(autosave, "%d", level);
+		fscanf(autosave, "%d", question_number);
+		fscanf(autosave, "%ld", elapse);
+		for (int i = 0; i < 9; i++) 
+		{
+			for (int j = 0; j < 9; j++)
+			{
+				fscanf(autosave, "%2d", &do_question[i][j]);
+			}
+		}
+		fclose(autosave);
+		return 1;
+	}
+}
+
+int init_record_file()
+{
+	FILE *record;
+	if ((record = fopen("../../data/records.txt", "w")) != NULL)
+	{
+		fclose(record);
+		return 1;
+	}
+	else
+	{
+		return -1;
+	}
+}
+
+int save_record(int level, long elapse)
+{
+	FILE *record;
+	if ((record = fopen("../../data/records.txt", "a")) != NULL)
+	{
+		fprintf(record, "%d %ls");
+	}
+	fclose(record);
+
+}
+
+int read_record(int times[], long avg_time[],long fast_time[])
+{
+	long long int total_time[5] = { 0,0,0,0,0 };
+	FILE *record;
+	if ((record = fopen("../../data/records.txt", "r")) != NULL)
+	{
+		while (!feof(record))
+		{
+			int level;
+			long elapse;
+			fscanf(record, "%d %ld", &level, &elapse);
+			if ((level <= 5) && (level >=1))
+			{
+				times[level - 1]++;
+				total_time[level - 1] += elapse;
+				if (elapse < fast_time[level - 1])
+				{
+					fast_time[level - 1] = elapse;
+				}
+			}
+		}
+		for (int i = 0; i < 5; i++)
+		{
+			if (times[i]>0)
+			{
+				avg_time[i] = total_time[i] / times[i];
+			}
+			else
+			{
+				fast_time[i] = 0;
+			}
+		}
+	}
 }
