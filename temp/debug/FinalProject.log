@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Build started 2016/12/29 下午 09:48:39.
      1>Project "C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\FinalProject\FinalProject.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(363,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
@@ -20,7 +21,33 @@
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\temp\debug\FinalProject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\temp\debug\FinalProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\temp\debug\FinalProject.lib" /MACHINE:X86 ..\..\temp\debug\main.obj
          FinalProject.vcxproj -> C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\FinalProject\..\..\temp\debug\FinalProject.exe
      1>Done Building Project "C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\FinalProject\FinalProject.vcxproj" (Build target(s)).
+=======
+﻿已經開始建置於 2016/12/20 下午 11:05:34。
+     1>節點 2 (Build 目標) 上的專案 "C:\c_code\git\FinalProject\FinalProject\FinalProject\FinalProject.vcxproj"。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(356,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(357,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\..\temp\debug\\" /Fd"..\..\temp\debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\source\main.c
+         main.c
+     1>c:\c_code\git\finalproject\include\xiao.h(28): error C2275: 'COORD' : 將此類型當做運算式的使用方式不合法
+                 c:\program files (x86)\windows kits\8.1\include\um\wincon.h(43) : 請參閱 'COORD' 的宣告
+     1>c:\c_code\git\finalproject\include\xiao.h(28): error C2146: 語法錯誤 : 遺漏 ';' (在識別項 'Sz' 之前)
+     1>c:\c_code\git\finalproject\include\xiao.h(28): error C2065: 'Sz' : 未宣告的識別項
+     1>c:\c_code\git\finalproject\include\xiao.h(29): error C2065: 'Sz' : 未宣告的識別項
+     1>c:\c_code\git\finalproject\include\xiao.h(29): error C2224: '.X' 的左邊必須擁有結構/等位類型
+     1>c:\c_code\git\finalproject\include\xiao.h(30): error C2065: 'Sz' : 未宣告的識別項
+     1>c:\c_code\git\finalproject\include\xiao.h(30): error C2224: '.Y' 的左邊必須擁有結構/等位類型
+     1>c:\c_code\git\finalproject\include\xiao.h(32): error C2065: 'Sz' : 未宣告的識別項
+     1>c:\c_code\git\finalproject\include\xiao.h(32): error C2440: '函式' : 無法由 'int' 轉換為 'COORD'
+     1>c:\c_code\git\finalproject\include\xiao.h(32): warning C4024: 'SetConsoleScreenBufferSize' : 型式和實質參數 2 不同的類型
+     1>c:\c_code\git\finalproject\source\main.c(50): warning C4244: '函式' : 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+     1>專案 "C:\c_code\git\FinalProject\FinalProject\FinalProject\FinalProject.vcxproj" (Build 目標) 建置完成 -- 失敗。
+>>>>>>> 92eb7ee094564a7ce6a68017c72a067b3af6fb48
 
-Build succeeded.
+建置失敗。
 
+<<<<<<< HEAD
 Time Elapsed 00:00:01.19
+=======
+經過時間 00:00:00.46
+>>>>>>> 92eb7ee094564a7ce6a68017c72a067b3af6fb48

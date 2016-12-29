@@ -1,0 +1,34 @@
+完成:
+完成功能
+//=======20161219新增==========
+printf_win()
+	遊戲完成(贏)的畫面
+	畫面要顯示按空白鍵返回主選單
+
+printf_end()
+	遊戲結束的畫面
+
+	
+printf_record(次數[0~n(難度1~n)],平均時間[0~4(難度1~5)],最快時間[0~4(難度1~5)])
+	//平均時間,最快時間單位為ms
+	難度1	次數XXX		平均時間XX:XX:XX		最快時間XX:XX:XX
+	難度2	次數XXX		平均時間XX:XX:XX		最快時間XX:XX:XX
+	難度3	次數XXX		平均時間XX:XX:XX		最快時間XX:XX:XX
+	難度4	次數XXX		平均時間XX:XX:XX		最快時間XX:XX:XX
+	難度5	次數XXX		平均時間XX:XX:XX		最快時間XX:XX:XX
+
+	space :　返回主選單
+		
+修改printf_decision()
+	是否離開?
+	1:確認
+	2:取消
+
+修改printf_level()
+	請選擇難度:
+	1:容易
+	2:普通
+	3:困難
+
+printf_welcome()
+	歡迎畫面
