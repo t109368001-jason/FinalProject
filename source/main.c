@@ -66,6 +66,7 @@ int main(void)
 {
 	_setmode(_fileno(stdout), _O_U16TEXT);
 	SetConsoleSize(120, 32);
+	srand(time(NULL));								//設rand種子碼
 	int question[9][9] = { 0 };
 	int do_question[9][9] = { 0 };
 	int answer[9][9] = { 0 };
@@ -83,7 +84,9 @@ int main(void)
 	long start_time = 0;
 	long end_time = 0;
 
-	printf_welcome();
+	printf_end(10);
+	printf_welcome(10);
+	printf_win(end_time);
 	while (menu != 4)
 	{
 	top_menu:
@@ -97,56 +100,70 @@ int main(void)
 			printf_level();									//printf難易度說明
 			delay_ms(100);
 			while (level_screen(&level) != 1);				//難度選擇
-			srand(time(NULL));								//設rand種子碼
 			//question_number = (rand() % 30) + 1;			//隨機出題號
 			question_number = 1;			//隨機出題號
-			set_question(question, &level, &question_number);	//設定題目
-			get_answer(answer, &level, &question_number);
 			start_time = clock();							//紀錄開始時間
 		continue_play:
+			set_question(question, &level, &question_number);	//設定題目
+			get_answer(answer, &level, &question_number);
 			printf_init(question);
-			printf_screen(do_question, cursor,clock()-start_time);	//printf開始遊戲畫面
-			while ((screen_check_key = screen(do_question, cursor)) != -1)		//遊戲中
+			printf_screen(do_question, cursor, clock() - start_time);	//printf開始遊戲畫面
+			while (1)
 			{
-				if (screen_check_key == 2)
+				while (_kbhit())
 				{
-					cheat(do_question, answer, cursor);
-				}
-				else if (screen_check_key == 1)
-				{
-					printf_screen(do_question, cursor);	//printf開始遊戲畫面
-					if (check_complete(question, do_question, answer) == 1)	//是否已完成
+					if ((screen_check_key = screen(do_question, cursor)) != -1)		//遊戲中
 					{
-						end_time = clock() - start_time;
-						//while (save_record(level, end_time) != 1)	//存檔
+						if (screen_check_key == 2)
 						{
-							//init_record_file();								//建立存檔
+							cheat(do_question, answer, cursor);
 						}
-						printf_win(end_time);
-						delay_ms(100);
-						while (decision_win() != 1);
-						goto top_menu;
+						else if (screen_check_key == 1)
+						{
+							if (check_complete(question, do_question, answer) == 1)	//是否已完成
+							{
+								end_time = clock() - start_time;
+								while (save_record(level, end_time) != 1)	//存檔
+								{
+									init_record_file();								//建立存檔
+								}
+								printf_win(end_time);
+								delay_ms(100);
+								//while (decision_win() != 1);
+								goto top_menu;
 
+							}
+							while (autosave(do_question, level, question_number, clock() - start_time) != 1);	//寫入到記錄檔
+						}
 					}
-					//while (autosave(question, do_question, answer, level, clock() - start_time) != 1);	//寫入到記錄檔
+					else
+					{
+						printf_decision();								//printf決定
+						delay_ms(100);
+						while (decision_screen(&decision_s) != 1);		//是否離開
+						if (decision_s == 2)							//如果取消	
+						{
+							goto continue_play;								//繼續遊戲
+						}
+						else
+						{
+							while (autosave(do_question, level, question_number, clock() - start_time) != 1);	//寫入到記錄檔
+							goto end_game;
+						}
+					}
 				}
+				delay_ms(100);
+				printf_screen(do_question, cursor);	//printf遊戲畫面
 			}
-			printf_decision();								//printf決定
-			delay_ms(100);
-			while (decision_screen(&decision_s) != 1);		//是否離開
-			if (decision_s == 2)							//如果取消	
-			{
-				goto continue_play;								//繼續遊戲
-			}
-			//while (autosave(question, do_question, answer, level, clock() - start_time) != 1);	//寫入到記錄檔
+		end_game:
 			break;
 		case 2:
-			//while (recovery(question, do_question, answer, level, start_time) != 1);
+			while (recovery(do_question, &level, &question_number, &start_time) != 1);
 			goto continue_play;
 			break;
 		case 3:
-			//read_record(record);							//讀取紀錄
-			printf_record(record_times,record_average,record_fast);							//printf紀錄
+			read_record(record_times, record_average, record_fast);							//讀取紀錄
+			printf_record(record_times, record_average, record_fast);							//printf紀錄
 			delay_ms(100);
 			while (decision_record() != 1);					//是否按下離開
 			break;
@@ -173,6 +190,6 @@ int main(void)
 			break;
 		}
 	}
-	printf_end();
+	printf_end(10);
 	return 0;
 }

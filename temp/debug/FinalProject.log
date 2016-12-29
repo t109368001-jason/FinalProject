@@ -1,4 +1,4 @@
-﻿Build started 2016/12/22 下午 04:13:16.
+﻿Build started 2016/12/29 下午 09:48:39.
      1>Project "C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\FinalProject\FinalProject.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(363,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(364,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
@@ -6,15 +6,21 @@
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\..\temp\debug\\" /Fd"..\..\temp\debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt ..\..\source\main.c
          main.c
      1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\xiao.h(89): warning C4244: 'function' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(100): warning C4244: 'function' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(108): warning C4020: 'printf_screen' : too many actual parameters
-     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(126): warning C4013: 'decision_win' undefined; assuming extern returning int
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\xiao.h(423): warning C4244: '=' : conversion from '__int64' to 'long', possible loss of data
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\kai.h(329): warning C4027: function declared without formal parameter list
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\kai.h(444): warning C4027: function declared without formal parameter list
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\kai.h(507): warning C4027: function declared without formal parameter list
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(69): warning C4244: 'function' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\source\main.c(110): warning C4020: 'printf_screen' : too many actual parameters
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\xiao.h(351): warning C4715: 'autosave' : not all control paths return a value
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\xiao.h(371): warning C4715: 'recovery' : not all control paths return a value
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\xiao.h(396): warning C4716: 'save_record' : must return a value
+     1>c:\users\xiao-xian-jie\desktop\finalproject\xiao\finalproject\include\xiao.h(431): warning C4716: 'read_record' : must return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"..\..\temp\debug\FinalProject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"..\..\temp\debug\FinalProject.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"..\..\temp\debug\FinalProject.lib" /MACHINE:X86 ..\..\temp\debug\main.obj
-     1>main.obj : error LNK2019: unresolved external symbol _decision_win referenced in function _main
-     1>..\..\temp\debug\FinalProject.exe : fatal error LNK1120: 1 unresolved externals
-     1>Done Building Project "C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\FinalProject\FinalProject.vcxproj" (Build target(s)) -- FAILED.
+         FinalProject.vcxproj -> C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\FinalProject\..\..\temp\debug\FinalProject.exe
+     1>Done Building Project "C:\Users\Xiao-Xian-Jie\Desktop\FinalProject\xiao\FinalProject\FinalProject\FinalProject\FinalProject.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.18
+Time Elapsed 00:00:01.19
