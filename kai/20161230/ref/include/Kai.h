@@ -207,47 +207,46 @@ void form(void)
 
 void printf_decision(void)
 {
-	int x = 0;
+	int x = 21;
 	int y = -10;
-	gotoxy(60 + x, 15 + y);
+	gotoxy(  x, 15 + y);
 	wprintf(L"%s", L"是否離開?	                                                      ");
-	gotoxy(60 + x, 16 + y);
+	gotoxy(  x, 16 + y);
 	wprintf(L"%s", L"1:確認                                                           ");
-	gotoxy(60 + x, 17 + y);
+	gotoxy(  x, 17 + y);
 	wprintf(L"%s", L"2:取消                                                           ");
-	gotoxy(60 + x, 18 + y);
+	gotoxy(  x, 18 + y);
 	wprintf(L"%s", L"                                                                 ");
-	gotoxy(60 + x, 19 + y);
+	gotoxy(  x, 19 + y);
 }
 
 void printf_level(void)
 {
-	int x = 0;
-	int y = 0;
-	gotoxy(60 + x, 15 + y);
-	wprintf(L"%s", L"請選擇難度:                                                      ");
-	gotoxy(60 + x, 16 + y);
-	wprintf(L"%s", L"1:容易                                                           ");
-	gotoxy(60 + x, 17 + y);
-	wprintf(L"%s", L"2:普通                                                           ");
-	gotoxy(60 + x, 18 + y);
-	wprintf(L"%s", L"3:困難                                                           ");
-	gotoxy(60 + x, 19 + y);
+	int x =34;
+	int y = 10;
+	gotoxy( x,  y);
+	wprintf(L"%s", L"→    請選擇: 1:容易                                           ");
+	gotoxy(  x,  y+2);													      
+	wprintf(L"%s", L"              2:普通                                           ");
+	gotoxy(  x,  y+4);													      
+	wprintf(L"%s", L"              3:困難                                           ");
+	
+	
 }
 
 void printf_menu(void)
 {
-	int x = 0;
-	int y = -5;
-	gotoxy(60 + x, 15 + y);
+	int x =15;
+	int y = 10;
+	gotoxy( x,  y);
 	wprintf(L"%s", L"1:開始遊戲                                                      ");
-	gotoxy(60 + x, 16 + y);
+	gotoxy( x,  y+2);
 	wprintf(L"%s", L"2:未完成的題目                                                  ");
-	gotoxy(60 + x, 17 + y);
+	gotoxy( x,  y+4);
 	wprintf(L"%s", L"3:查看成績                                                      ");
-	gotoxy(60 + x, 18 + y);
+	gotoxy( x, y+6);
 	wprintf(L"%s", L"4:離開                                                          ");
-	gotoxy(60 + x, 19 + y);
+	gotoxy(x, y+8);
 }
 
 void printf_init(int q[9][9])

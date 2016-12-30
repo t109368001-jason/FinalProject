@@ -87,6 +87,7 @@ int main(void)
 	//printf_end(10);
 	printf_welcome(10);
 	//printf_win(end_time);
+	
 	while (menu != 4)
 	{
 	top_menu:
