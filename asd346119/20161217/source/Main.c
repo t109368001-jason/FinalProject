@@ -8,6 +8,8 @@ int level_screen(int *x);
 int decision_record(int *q);
 int decision_screen(int *e);
 int screen(int a[][9], int b[]);
+int decision_win();
+
 int main(void)
 {
 	int a;
@@ -25,7 +27,7 @@ int main(void)
 int wait_keyin()
 { 
 	char a;
-  	a = _getch();    //a=讀取一個值
+   	a = _getch();    //a=讀取一個值
 	fflush(stdin);
  	return a;
 }
@@ -49,6 +51,26 @@ int menu_screen(int *z)
 		break;
 	case 52:
 		*z = 4;
+		return 1;
+		break;
+	case 53:
+		*z = 5;
+		return 1;
+		break;
+	case 54:
+		*z = 6;
+		return 1;
+		break;
+	case 55:
+		*z = 7;
+		return 1;
+		break;
+	case 56:
+		*z = 8;
+		return 1;
+		break;
+	case 57:
+		*z = 9;
 		return 1;
 		break;
 	}
@@ -81,7 +103,7 @@ int decision_record(int *q)
 	int w = wait_keyin();
 	switch (w)
 	{
-	case 49:
+	case 32:
 		*q = 1;
 		return 1;
 		break;
@@ -94,14 +116,15 @@ int decision_screen(int *e)
 	int r = wait_keyin();
 	switch (r)
 	{
-	case49:
+	case 49:
 		*e = 1;
 		return 1;
 		break;
-	case50:
+	case 50:
 		*e = 2;
 		return 1;
 		break;
+
 	}
 	return-1;
 }
@@ -186,7 +209,20 @@ int screen(int a[][9], int b[])
 	case 17:
 		return -1;
 		break;
-
+	case 93:      //]
+		return 2;
+		break;
 	}
 	return 0;
 }
+int decision_win()
+{
+int r = wait_keyin();
+switch (r)
+{
+case 32:
+	return 1;	
+	break;
+}
+return-1;
+}                                                             
