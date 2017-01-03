@@ -1,9 +1,0 @@
-新增ref 參考檔案
-以ref 做測試開發
-先休息
-12:49AM
-
-/////////////////////
-printf_level完成
-printf_menu完成
-printf_welcome(bug)，需要改版面清潔
