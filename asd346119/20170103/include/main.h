@@ -103,12 +103,9 @@ int decision_record(int *q)
 	int w = wait_keyin();
 	switch (w)
 	{
-	case 32:
-		*q = 1;
 		return 1;
 		break;
 	}
-	return -1;
 }
 
 int decision_screen(int *e)
@@ -116,11 +113,11 @@ int decision_screen(int *e)
 	int r = wait_keyin();
 	switch (r)
 	{
-	case 49:
+	case 121:
 		*e = 1;
 		return 1;
 		break;
-	case 50:
+	case 110:
 		*e = 2;
 		return 1;
 		break;
@@ -220,9 +217,7 @@ int decision_win()
 	int r = wait_keyin();
 	switch (r)
 	{
-	case 32:
 		return 1;
 		break;
+
 	}
-	return-1;
-}

@@ -14,7 +14,7 @@ int main(void)
 {
 	int a;
 	int x[9][9];
-	int y[2] = { 0, 0 };
+	int y[2] = { 0 ,0};
 	while (1)
 	{
 		screen(x, y);
@@ -25,11 +25,11 @@ int main(void)
 
 
 int wait_keyin()
-{
+{ 
 	char a;
-	a = _getch();    //a=讀取一個值
+   	a = _getch();    //a=讀取一個值
 	fflush(stdin);
-	return a;
+ 	return a;
 }
 
 int menu_screen(int *z)
@@ -103,12 +103,9 @@ int decision_record(int *q)
 	int w = wait_keyin();
 	switch (w)
 	{
-	case 32:
-		*q = 1;
 		return 1;
 		break;
-	}
-	return -1;
+	}	
 }
 
 int decision_screen(int *e)
@@ -116,11 +113,11 @@ int decision_screen(int *e)
 	int r = wait_keyin();
 	switch (r)
 	{
-	case 49:
+	case 121:
 		*e = 1;
 		return 1;
 		break;
-	case 50:
+	case 110:
 		*e = 2;
 		return 1;
 		break;
@@ -144,7 +141,7 @@ int screen(int a[][9], int b[])
 		break;
 	case 0x50:  //下
 		b[1] = b[1] + 1;
-		if (b[1] > 8)
+		if (b[1] > 8 )
 		{
 			b[1] = 8;
 		}
@@ -217,12 +214,10 @@ int screen(int a[][9], int b[])
 }
 int decision_win()
 {
-	int r = wait_keyin();
-	switch (r)
-	{
-	case 32:
-		return 1;
-		break;
-	}
-	return-1;
-}
+int r = wait_keyin();
+switch (r)
+{
+	return 1;	
+	break;
+
+}                                                             
