@@ -402,3 +402,11 @@ void printf_end(int delay_time)
 		delay_ms(delay_time);
 	}
 }
+
+//========20161230========
+修改
+printf_level()
+	照excel格式顯示	
+
+printf_record有BUG
+	傳入的時間單位為ms

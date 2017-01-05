@@ -1,3 +1,4 @@
+
 int wait_keyin()
 {
 	char a;
@@ -25,6 +26,26 @@ int menu_screen(int *z)
 		break;
 	case 52:
 		*z = 4;
+		return 1;
+		break;
+	case 53:
+		*z = 5;
+		return 1;
+		break;
+	case 54:
+		*z = 6;
+		return 1;
+		break;
+	case 55:
+		*z = 7;
+		return 1;
+		break;
+	case 56:
+		*z = 8;
+		return 1;
+		break;
+	case 57:
+		*z = 9;
 		return 1;
 		break;
 	}
@@ -57,11 +78,10 @@ int decision_record()
 	int w = wait_keyin();
 	switch (w)
 	{
-	case 49:
+	default:
 		return 1;
 		break;
 	}
-	return -1;
 }
 
 int decision_screen(int *e)
@@ -69,14 +89,15 @@ int decision_screen(int *e)
 	int r = wait_keyin();
 	switch (r)
 	{
-	case 49:
+	case 121:
 		*e = 1;
 		return 1;
 		break;
-	case 50:
+	case 110:
 		*e = 2;
 		return 1;
 		break;
+
 	}
 	return-1;
 }
@@ -161,6 +182,20 @@ int screen(int a[][9], int b[])
 	case 17:
 		return -1;
 		break;
+	case 93:      //]
+		return 2;
+		break;
 	}
 	return 0;
+}
+
+int decision_win()
+{
+	int r = wait_keyin();
+	switch (r)
+	{
+	default:
+		return 1;
+		break;
+	}
 }
