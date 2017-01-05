@@ -69,6 +69,14 @@ int level_screen(int *x)
 		*x = 3;
 		return 1;
 		break;
+	case 52:
+		*x = 4;
+		return 1;
+		break;
+	case 53:
+		*x = 5;
+		return 1;
+		break;
 	}
 	return -1;
 }

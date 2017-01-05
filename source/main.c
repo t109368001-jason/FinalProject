@@ -45,7 +45,7 @@ void printf_menu(void);
 void printf_screen(int q_n[9][9], int cur[2], long ms_);
 void printf_welcome(void);
 void printf_end(void);
-void printf_win(void);
+void printf_win(long);
 void printf_record(int times[5], long ave_time[5], long fas_time[5]);
 void set_text_color(int x);
 void clean(void);
@@ -90,8 +90,9 @@ int main(void)
 	int question_number = 0;
 	long start_time = 0;
 	long end_time = 0;
+	long fix_time = 0;
 
-	//printf_welcome(10);
+	printf_welcome(10);
 	while (menu != 4)
 	{
 	top_menu:
@@ -134,18 +135,20 @@ int main(void)
 						{
 							if (check_complete(question, do_question, answer) == 1)	//是否已完成
 							{
-								end_time = clock() - start_time;
+								end_time = clock() - start_time - fix_time;
 								while (save_record(&level, &end_time) != 1)	//存檔
 								{
 									init_record_file();								//建立存檔
 								}
+								remove("../../data/autosave.txt");
 								printf_win(end_time);
 								delay_ms(1000);
+								fflush(stdin);
 								while (decision_win() != 1);
 								goto top_menu;
 
 							}
-							while (autosave(do_question, &level, &question_number, clock() - start_time) != 1);	//寫入到記錄檔
+							while (autosave(do_question, &level, &question_number, clock() - start_time - fix_time) != 1);	//寫入到記錄檔
 						}
 					}
 					else
@@ -159,28 +162,32 @@ int main(void)
 						}
 						else
 						{
-							while (autosave(do_question, &level, &question_number, clock() - start_time) != 1);	//寫入到記錄檔
+							while (autosave(do_question, &level, &question_number, clock() - start_time - fix_time) != 1);	//寫入到記錄檔
 							goto end_game;
 						}
 					}
-					printf_screen(do_question, cursor,clock()-start_time);	//printf遊戲畫面
+					printf_screen(do_question, cursor, clock() - start_time - fix_time);	//printf遊戲畫面
 				}
 				if (clock() - timer1_buffer >= timer1_interval)
 				{
-					printf_screen(do_question, cursor, clock() - start_time);	//printf遊戲畫面
+					printf_screen(do_question, cursor, clock() - start_time - fix_time);	//printf遊戲畫面
 					timer1_buffer = clock();
 				}
 			}
 		end_game:
 			break;
 		case 2:
-			while (recovery(do_question, &level, &question_number, &start_time) != 1);
-			goto continue_play;
+			if (recovery(do_question, &level, &question_number, &start_time) == 1)
+			{
+				fix_time = clock() - start_time;
+				goto continue_play;
+			}
 			break;
 		case 3:
 			read_record(record_times, record_average, record_fast);							//讀取紀錄
 			printf_record(record_times, record_average, record_fast);							//printf紀錄
 			delay_ms(100);
+			fflush(stdin);
 			while (decision_record() != 1);					//是否按下離開
 			break;
 		case 4:

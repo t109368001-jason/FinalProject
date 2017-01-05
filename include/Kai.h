@@ -1,6 +1,5 @@
 ﻿
 
-
 int F_O[19][19] =
 { { 11, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 13, 12, 14 },
 { 20, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 20, 0, 0, 0, 0, 0, 20 },
@@ -215,10 +214,13 @@ void printf_level(void)
 	gotoxy(x, y);
 	wprintf(L"%s", L"→    請選擇: 1:容易                                           ");
 	gotoxy(x, y + 2);
-	wprintf(L"%s", L"              2:普通                                           ");
+	wprintf(L"%s", L"              2:簡單                                           ");
 	gotoxy(x, y + 4);
-	wprintf(L"%s", L"              3:困難                                           ");
-
+	wprintf(L"%s", L"              3:普通                                           ");
+	gotoxy(x, y + 6);
+	wprintf(L"%s", L"              4:困難                                           ");
+	gotoxy(x, y + 8);
+	wprintf(L"%s", L"              5:地獄                                           ");
 
 }
 
@@ -266,20 +268,26 @@ void printf_init(int q[9][9])
 
 void clean(void)
 {
-	for (int i = 1; i <= 30; i++)
+	for (int i = 4; i <= 26; i++)
 	{
-		gotoxy(0, i);
+		gotoxy(1, i);
 		for (int j = 1; j <= 59; j++)
 			wprintf(L"%s", L"  ");
 	}
 
 }
+
 void printf_screen(int q_n[9][9], int cur[2], long ms_)
 {
 
 	CCI.bVisible = FALSE; // 是否可視
 	CCI.dwSize = 15; // 設定大小,1~100
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &CCI);
+	gotoxy(18 * 2 - 1, 4);
+	wprintf( L"經過時間：　%d%d：%d%d：%d%d", 
+		ms_ / 1000 / 60 / 60 / 10, ms_ / 1000 / 60 / 60 % 10,
+		ms_ / 1000 / 60 % 60 / 10, ms_ / 1000 / 60 % 60 % 10,
+		ms_ / 1000 % 60 / 10, ms_ / 1000 % 60 % 10	);
 	gotoxy(36 * 2 - 1, 9);
 	wprintf(L"%s", L"　　　↑                 ");
 	gotoxy(36 * 2 - 1, 10);
@@ -330,17 +338,6 @@ void printf_record(int times[5], long ave_time[5], long fas_time[5])
 }
 
 //============================================
-void clear_screen()
-{
-	gotoxy(1, 1);
-	for (int i = 0; i < 30; i++)
-	{
-		for (int j = 0; j < 59; j++)
-			wprintf(L"　");
-		wprintf(L"\n");
-	}
-}
-
 void set_text_color(int x)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -463,7 +460,7 @@ void printf_welcome(int delay_time)
 	clean();
 }
 
-void printf_win(long elapse)
+void printf_win(long ms_)
 {
 	CCI.bVisible = FALSE; // 是否可視
 	CCI.dwSize = 15; // 設定大小,1~100
@@ -521,7 +518,10 @@ void printf_win(long elapse)
 		}
 	}
 	gotoxy(22 * 2, 23);
-	wprintf(L"%s", L"總　時　間　：　ＸＸ：ＸＸ：ＸＸ");
+	wprintf( L"　　總　時　間　：　%d%d：%d%d：%d%d",
+		ms_ / 1000 / 60 / 60 / 10, ms_ / 1000 / 60 / 60 % 10,
+		ms_ / 1000 / 60 % 60 / 10, ms_ / 1000 / 60 % 60 % 10,
+		ms_ / 1000 % 60 / 10, ms_ / 1000 % 60 % 10	);
 	gotoxy(26 * 2, 26);
 	wprintf(L"%s", L"按任意鍵回到主選單");
 }
