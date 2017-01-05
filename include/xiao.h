@@ -156,14 +156,6 @@ int game_snake(void)
 			}
 		}
 	}
-	//FILE *toptic;
-	//srand(time(NULL));
-	//char test[100] = "../../toptic/1001.txt";
-	//toptic = fopen(test, "r");
-	//if (toptic == NULL)
-	//	printf("error");
-	//_setmode(_fileno(stdout), _O_U16TEXT);
-	//wprintf(L"%ls", L"①\n⑴\n⒈\n⓵\n🄂\n");
 	system("pause");
 	return 0;
 }
@@ -331,12 +323,12 @@ int snake_move(int snake[][2], enum DIRECT *direct, int *snake_len)
 	return 0;
 }
 //===============================================================================
-int autosave(int do_question[][9],int level,int question_number,long elapse)
+int autosave(int do_question[][9],int *level,int *question_number,long elapse)
 {
 	FILE *autosave;
 	if ((autosave = fopen("../../data/autosave.txt", "w")) != NULL)
 	{
-		fprintf(autosave, "%d %d %ld\n", level, question_number, elapse);
+		fprintf(autosave, "%d %d %ld\n", *level, *question_number, elapse);
 		for (int i = 0; i < 9; i++)
 		{
 			for (int j = 0; j < 9; j++)
@@ -376,7 +368,7 @@ int init_record_file()
 	if ((record = fopen("../../data/records.txt", "w")) != NULL)
 	{
 		fclose(record);
-		return 1;
+		return (int)1;
 	}
 	else
 	{
@@ -384,15 +376,15 @@ int init_record_file()
 	}
 }
 
-int save_record(int level, long elapse)
+int save_record(int *level, long *elapse)
 {
 	FILE *record;
 	if ((record = fopen("../../data/records.txt", "a")) != NULL)
 	{
-		fprintf(record, "%d %ls");
+		fprintf(record, "%d %ld\n",*level,*elapse);
+		fclose(record);
+		return 1;
 	}
-	fclose(record);
-
 }
 
 int read_record(int times[], long avg_time[],long fast_time[])
@@ -405,7 +397,7 @@ int read_record(int times[], long avg_time[],long fast_time[])
 		{
 			int level;
 			long elapse;
-			fscanf(record, "%d %ld", &level, &elapse);
+			fscanf(record, "%d %ld\n", &level, &elapse);
 			if ((level <= 5) && (level >=1))
 			{
 				times[level - 1]++;
@@ -427,5 +419,6 @@ int read_record(int times[], long avg_time[],long fast_time[])
 				fast_time[i] = 0;
 			}
 		}
+		return 1;
 	}
 }

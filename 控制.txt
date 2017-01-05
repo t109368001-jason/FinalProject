@@ -65,6 +65,13 @@ int decision_win()
 	用wait_keyin取得按鍵
 	任意鍵	回傳1
 
-新增int decision_win()
+修改int decision_win()
 	用wait_keyin取得按鍵
 	任意鍵	回傳1
+
+//========20161230========
+修改int level_screen(難度)
+	用wait_keyin取得按鍵
+	←	回傳2
+	1~5 難度設為1~5，並回傳1
+	其他回傳-1
